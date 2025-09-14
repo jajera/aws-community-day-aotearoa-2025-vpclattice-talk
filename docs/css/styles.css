@@ -1,0 +1,138 @@
+/* Custom styles for VPC Lattice talk website */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom gradient backgrounds - AWS Community theme */
+.gradient-blue-purple {
+    background: linear-gradient(135deg, #FF9900 0%, #232F3E 100%);
+    /* AWS Orange to Dark Blue */
+}
+
+/* Animated gradient backgrounds */
+@keyframes gradient-x {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-50%) rotate(180deg);
+    }
+}
+
+@keyframes gradient-y {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-50%) rotate(180deg);
+    }
+}
+
+.animate-gradient-x {
+    animation: gradient-x 15s ease infinite;
+    transform: translateX(-50%) translateY(-50%);
+    width: 200%;
+    height: 200%;
+}
+
+.animate-gradient-y {
+    animation: gradient-y 20s ease infinite;
+    transform: translateX(-50%) translateY(-50%);
+    width: 200%;
+    height: 200%;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Custom button styles - AWS Community theme */
+.btn-primary {
+    @apply bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-200;
+}
+
+.btn-secondary {
+    @apply bg-transparent border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-colors duration-200;
+}
+
+/* Card hover effects */
+.card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Custom spacing utilities */
+.section-padding {
+    @apply py-12 md:py-16;
+}
+
+/* Code block styling */
+code {
+    @apply bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono;
+}
+
+pre {
+    @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto;
+}
+
+/* Custom list styles - AWS Community theme */
+.custom-list {
+    @apply space-y-3;
+}
+
+.custom-list li {
+    @apply flex items-start;
+}
+
+.custom-list li::before {
+    content: "→";
+    @apply text-orange-500 mr-3 font-bold;
+}
+
+/* Responsive text sizing */
+.text-responsive {
+    @apply text-lg md:text-xl;
+}
+
+/* Custom focus styles for accessibility */
+.focus-visible {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+
+    h1,
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
