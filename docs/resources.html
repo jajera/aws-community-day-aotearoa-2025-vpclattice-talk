@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources & References - VPC Lattice Talk</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Resources & References</h1>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">VPC Lattice: Modern Service Networking</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="darkModeToggle"
+                        class="flex items-center px-4 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-200 bg-gradient-to-r from-orange-100 to-purple-100 dark:from-gray-700 dark:to-gray-600 rounded-xl hover:from-orange-200 hover:to-purple-200 dark:hover:from-gray-600 dark:hover:to-gray-500 transition-all duration-300 shadow-md hover:shadow-lg">
+                        <svg id="sunIcon" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                            style="display: none;">
+                            <path fill-rule="evenodd"
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg id="moonIcon" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <span id="toggleText">Dark</span>
+                    </button>
+                    <a href="index.html"
+                        class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+                        ← Back to Talk
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Official AWS Documentation -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Official AWS Documentation</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">VPC Lattice User Guide</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Comprehensive guide covering all VPC Lattice
+                        features and concepts</p>
+                    <a href="https://docs.aws.amazon.com/vpc-lattice/"
+                        class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                        target="_blank">
+                        Read Documentation →
+                    </a>
+                </div>
+
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">VPC Lattice API Reference</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Complete API reference for programmatic access</p>
+                    <a href="https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/"
+                        class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                        target="_blank">
+                        View API Reference →
+                    </a>
+                </div>
+
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">VPC Lattice Pricing</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Understanding costs and pricing model</p>
+                    <a href="https://aws.amazon.com/vpc/pricing/"
+                        class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                        target="_blank">
+                        View Pricing →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Posts & Articles -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Blog Posts & Articles</h2>
+            <div class="space-y-4">
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Introducing AWS VPC Lattice</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-3">Official AWS blog post announcing VPC Lattice</p>
+                    <a href="https://aws.amazon.com/blogs/aws/introducing-vpc-lattice-simplify-networking-for-service-to-service-communication-preview/"
+                        class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                        target="_blank">
+                        Read on AWS Blog →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hands-on Examples -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Hands-on Examples</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Terraform Example</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Runnable VPC Lattice implementation</p>
+                    <a href="https://github.com/tfstack/terraform-aws-vpc-lattice/tree/main/examples"
+                        class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium">
+                        View Terraform Code →
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-300"><a href="https://aws-community-day.nz" target="_blank"
+                    class="hover:text-white transition-colors">AWS Community Day Aotearoa 2025</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode implementation
+        function initDarkMode() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = savedTheme === 'dark' || (savedTheme === null && systemPrefersDark);
+
+            document.documentElement.classList.toggle('dark', isDark);
+
+            const toggle = document.getElementById('darkModeToggle');
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+            const toggleText = document.getElementById('toggleText');
+
+            function updateUI() {
+                const isDark = document.documentElement.classList.contains('dark');
+                if (sunIcon) sunIcon.style.display = isDark ? 'block' : 'none';
+                if (moonIcon) moonIcon.style.display = isDark ? 'none' : 'block';
+                if (toggleText) toggleText.textContent = isDark ? 'Light' : 'Dark';
+            }
+
+            function toggleTheme() {
+                const isDark = document.documentElement.classList.contains('dark');
+                document.documentElement.classList.toggle('dark', !isDark);
+                localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+                updateUI();
+            }
+
+            if (toggle) {
+                toggle.addEventListener('click', toggleTheme);
+                updateUI();
+            } else {
+                console.error('Dark mode toggle button not found!');
+            }
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initDarkMode);
+        } else {
+            initDarkMode();
+        }
+    </script>
+</body>
+
+</html>
