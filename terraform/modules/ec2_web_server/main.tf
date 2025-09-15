@@ -127,6 +127,7 @@ module "ec2_web_server" {
               <button class="btn" onclick="loadData('payments')" style="background: #007cba;">Payments (Path-based)</button>
               <button class="btn" onclick="loadData('inventory')" style="background: #007cba;">Inventory (Path-based)</button>
               <button class="btn" onclick="loadData('notifications')" style="background: #6f42c1;">Notifications (EC2)</button>
+              <button class="btn" onclick="loadData('health')" style="background: #20c997; border: 2px solid #17a2b8; font-weight: bold;">🏥 Health (IP Target)</button>
               <button class="btn" onclick="loadData('analytics')" style="background: #ff6b35;">Analytics (Container)</button>
               <button class="btn" onclick="showDebug()" style="background: #dc3545;">Debug Info</button>
           </div>
@@ -137,6 +138,7 @@ module "ec2_web_server" {
                   <li><strong>Products (Green):</strong> Weighted routing - 50/50 split between v1 and v2 Lambda functions</li>
                   <li><strong>Other APIs (Blue):</strong> Path-based routing - direct routing to specific Lambda services</li>
                   <li><strong>Notifications (Purple):</strong> EC2 routing - nginx service running on EC2 instance</li>
+                  <li><strong>Health (Teal):</strong> <span style="color: #20c997; font-weight: bold;">IP Target routing</span> - Direct IP address targeting with nginx on EC2</li>
                   <li><strong>Analytics (Orange):</strong> Container routing - ECS Fargate container with advanced analytics</li>
               </ul>
           </div>

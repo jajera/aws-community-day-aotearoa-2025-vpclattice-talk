@@ -14,6 +14,7 @@ output "security_group_ids" {
     fargate_sg               = aws_security_group.fargate_sg.id
     lambda_sg                = aws_security_group.lambda_sg.id
     notifications_service_sg = aws_security_group.notifications_service_sg.id
+    health_service_sg        = aws_security_group.health_service_sg.id
     vpc_lattice_2_sg         = aws_security_group.vpc_lattice_2_sg.id
     vpc_lattice_3_sg         = aws_security_group.vpc_lattice_3_sg.id
     web_server_sg            = aws_security_group.web_server_sg.id

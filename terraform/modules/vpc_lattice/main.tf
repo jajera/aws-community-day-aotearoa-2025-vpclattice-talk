@@ -181,7 +181,7 @@ module "vpc_lattice" {
             Service    = "analytics"
             Domain     = "reporting"
             TargetType = "ECS_FARGATE"
-            Version    = "2.0"
+            Version    = "1.0"
           }
         },
         {
@@ -207,7 +207,33 @@ module "vpc_lattice" {
             Service    = "notifications"
             Domain     = "communication"
             TargetType = "EC2"
-            Version    = "2.0"
+            Version    = "1.0"
+          }
+        },
+        {
+          name     = "health-service"
+          type     = "INSTANCE"
+          protocol = "HTTP"
+          port     = 80
+          vpc_id   = var.vpc_ids["app_2"]
+          targets = [
+            {
+              target_id = var.ec2_health_service_instance_id
+              port      = 80
+            }
+          ]
+          health_check = {
+            path                = "/health"
+            interval            = 10
+            timeout             = 5
+            healthy_threshold   = 1
+            unhealthy_threshold = 2
+          }
+          tags = {
+            Service    = "health"
+            Domain     = "health"
+            TargetType = "EC2"
+            Version    = "1.0"
           }
         },
         {
@@ -319,6 +345,23 @@ module "vpc_lattice" {
             RuleType = "notifications-route"
             Priority = "60"
             Domain   = "communication"
+          }
+        },
+        {
+          priority          = 70
+          target_group_name = "health-service"
+          match = {
+            http_match = {
+              path = "/health"
+            }
+          }
+          action = {
+            weight = 1
+          }
+          tags = {
+            RuleType = "health-route"
+            Priority = "70"
+            Domain   = "health"
           }
         }
       ]
