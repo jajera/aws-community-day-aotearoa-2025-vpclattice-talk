@@ -88,3 +88,66 @@ EOT
     Domain  = "communication"
   }
 }
+
+
+############################################
+# Health Service
+############################################
+
+module "ec2_health_service" {
+  source = "tfstack/ec2-server/aws"
+
+  name      = "${var.name_prefix}3-health-service"
+  subnet_id = var.app_2_private_subnet_ids[2]
+  vpc_id    = var.vpc_ids["app_2"]
+
+  create_security_group  = false
+  vpc_security_group_ids = [var.security_group_ids["health_service_sg"]]
+
+  instance_type    = "t3.micro"
+  assign_public_ip = false
+  enable_ssm       = true
+
+  user_data = <<-EOT
+#!/bin/bash
+exec > >(tee /var/log/user-data.log) 2>&1
+
+echo "Starting health service setup..."
+
+# Update system
+if command -v dnf >/dev/null 2>&1; then
+  dnf -y update
+else
+  yum -y update
+fi
+
+# Install nginx using amazon-linux-extras
+amazon-linux-extras install nginx1 -y
+
+# Configure nginx
+cat > /etc/nginx/conf.d/default.conf << 'NGINX'
+server {
+    listen 80;
+    location /health {
+        add_header Content-Type application/json;
+        return 200 '{"status":"healthy","service":"health-service","timestamp":"2024-01-15T10:30:00Z"}';
+    }
+    location / {
+        add_header Content-Type application/json;
+        return 200 '{"api_version":"1.0","service":"health-service","message":"Health Service (EC2)","health":[{"id":"H001","type":"cpu","status":"healthy","value":"85%"},{"id":"H002","type":"memory","status":"healthy","value":"45%"},{"id":"H003","type":"disk","status":"healthy","value":"75%"}],"_demo_info":{"service_type":"Health Service (EC2)","target_url":"http://api.example.local/health","routing_method":"Path-based"}}';
+    }
+}
+NGINX
+
+# Start and enable nginx
+systemctl start nginx
+systemctl enable nginx
+
+echo "Health service setup completed successfully!"
+EOT
+
+  instance_tags = {
+    Service = "health"
+    Domain  = "health"
+  }
+}

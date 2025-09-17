@@ -34,6 +34,7 @@ output "test_commands" {
     api_inventory     = "curl -s api.${local.route53_zone_name}/inventory | jq ."
     api_analytics     = "curl -s api.${local.route53_zone_name}/analytics | jq ."
     api_notifications = "curl -s api.${local.route53_zone_name}/notifications | jq ."
+    api_health        = "curl -s api.${local.route53_zone_name}/health | jq ."
 
     # Products Service (Weighted routing)
     products_service = "curl -s products.${local.route53_zone_name} | jq ."
@@ -62,6 +63,7 @@ output "routing_info" {
         "/inventory"     = "Lambda inventory service"
         "/analytics"     = "ECS Fargate analytics service"
         "/notifications" = "EC2 notifications service"
+        "/health"        = "EC2 health service"
         "default"        = "Lambda notfound service"
       }
     }

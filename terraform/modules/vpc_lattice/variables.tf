@@ -28,6 +28,11 @@ variable "ec2_notifications_service_instance_id" {
   description = "The instance ID of the EC2 notifications service"
 }
 
+variable "ec2_health_service_instance_id" {
+  type        = string
+  description = "The instance ID of the EC2 health service"
+}
+
 variable "analytics_service_alb_arn" {
   type        = string
   description = "The ARN of the Analytics Service ALB"

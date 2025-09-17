@@ -53,6 +53,7 @@ module "setup_vpc_lattice" {
   route53_zone_name                     = local.route53_zone_name
   lambda_arns                           = module.setup_lambda.lambda_arns                        # lambda target example
   ec2_notifications_service_instance_id = module.setup_ec2.ec2_notifications_service_instance_id # instance target example
+  ec2_health_service_instance_id        = module.setup_ec2.ec2_health_service_instance_id        # instance target example
   analytics_service_alb_arn             = module.setup_ecs_fargate.analytics_service_alb_arn     # alb target example
 }
 
