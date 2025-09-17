@@ -28,9 +28,9 @@ aws-community-day-aotearoa-2025-vpclattice-talk/
 │   ├── css/                   # Styling
 │   ├── img/                   # Images
 │   └── slides/                # Presentation materials
-│       └── vpc-lattice-talk.pptx
+│       └── awscd-aotearoa-vpc-lattice-talk.pptx
 ├── slides/                     # Original presentation materials
-│   └── vpc-lattice-talk.pptx  # PowerPoint deck
+│   └── awscd-aotearoa-vpc-lattice-talk.pptx  # PowerPoint deck
 └── terraform/                  # Infrastructure as Code
     ├── main.tf                # Main Terraform configuration
     ├── local.tf               # Local values
@@ -49,8 +49,8 @@ aws-community-day-aotearoa-2025-vpclattice-talk/
 
 ### Primary Materials
 
-- **[PowerPoint Deck](docs/slides/vpc-lattice-talk.pptx)** - Main presentation file (accessible via website)
-- **[Original Source](slides/vpc-lattice-talk.pptx)** - Source PowerPoint file
+- **[PowerPoint Deck](docs/slides/awscd-aotearoa-vpc-lattice-talk.pptx)** - Main presentation file (accessible via website)
+- **[Original Source](slides/awscd-aotearoa-vpc-lattice-talk.pptx)** - Source PowerPoint file
 
 ### How to View
 
@@ -130,7 +130,7 @@ See [terraform/README.md](terraform/README.md) for complete setup instructions, 
 
 2. **View the slides**:
    - Visit the live website and click "Download Slides"
-   - Or open `docs/slides/vpc-lattice-talk.pptx` directly
+   - Or open `docs/slides/awscd-aotearoa-vpc-lattice-talk.pptx` directly
 
 3. **Try the Terraform example**:
 
